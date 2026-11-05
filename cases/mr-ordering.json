@@ -139,5 +139,22 @@
       "Testing checklist #6."
     ],
     "attachments": []
+  },
+  {
+    "code": "R3.10",
+    "title": "Customer checks on an existing order",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After R4.1, open the chat as the same Visitor who placed the order.",
+      "Ask \"Is my order ready?\""
+    ],
+    "expected": "It finds your order and gives its current status (ready), matching what the owner set. It doesn't start a new order.",
+    "notes": [
+      "From the meeting notes (Fauzi's list: customer follows up on an order), not the deck."
+    ],
+    "attachments": []
   }
 ]
