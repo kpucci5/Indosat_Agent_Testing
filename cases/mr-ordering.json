@@ -1,0 +1,161 @@
+[
+  {
+    "code": "R3.1",
+    "title": "Greets with the business name",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Open the chat and choose Visitor."
+    ],
+    "expected": "The agent greets you with your business's name.",
+    "notes": [
+      "Journey 3, step 1 (Call in). On web, Chat → Visitor stands in for the call."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.2",
+    "title": "Answers questions about the menu and prices",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "As a visitor, ask \"What do you sell?\" and \"How much is <product>?\""
+    ],
+    "expected": "Products and prices match the catalog. Nothing is made up and retired products aren't offered.",
+    "notes": [
+      "Testing checklist #4."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.3",
+    "title": "Answers questions about the business",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"What time do you close?\" and \"What services do you offer?\""
+    ],
+    "expected": "Answers match the business profile from onboarding.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R3.4",
+    "title": "Build an order",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Order a few items with quantities and a note, e.g. \"2 jasmine milk teas, less sugar, and 1 matcha mochi.\""
+    ],
+    "expected": "It captures every item, quantity and note as an order list.",
+    "notes": [
+      "Journey 3, step 2.",
+      "Testing checklist #5."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.5",
+    "title": "Change the order before confirming",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Before confirming, add one item and remove another, e.g. \"Add a chocolate mochi and drop the matcha mochi.\""
+    ],
+    "expected": "The order list updates correctly and the total reflects the change.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R3.6",
+    "title": "Order an unavailable item",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Try to order a retired product (e.g. strawberry mochi) and something that was never on the menu."
+    ],
+    "expected": "It says the item isn't available, doesn't add it to the order, and suggests what's on the menu instead.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R3.7",
+    "title": "Customer name is captured",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Place an order without giving your name."
+    ],
+    "expected": "The agent asks for your name and attaches it to the order.",
+    "notes": [
+      "Customer information collected is configurable."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.8",
+    "title": "Read back and confirm",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "When the order is complete, say \"That's all.\"",
+      "Reply \"yes\" to confirm."
+    ],
+    "expected": "It repeats the full order with each item, quantity, note and the correct total, and places the order only after you confirm.",
+    "notes": [
+      "Journey 3, step 3.",
+      "Testing checklist #5."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.9",
+    "title": "Owner is notified of the order",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After R3.8, check the owner's notification."
+    ],
+    "expected": "The owner gets a notification of the new order with the customer's name, items and total.",
+    "notes": [
+      "Journey 3, step 4 (notified on SMS).",
+      "Testing checklist #5.",
+      "SMS isn't live yet (pending network integration). On web, check where the message shows up and note it. Mark Blocked if you can't see it anywhere."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R3.10",
+    "title": "Order shows correctly in memory",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "As the owner, check the order in memory (or ask \"What orders came in today?\")."
+    ],
+    "expected": "The order is saved as its own item with the customer's name, items, quantities, notes, total and status.",
+    "notes": [
+      "Testing checklist #6."
+    ],
+    "attachments": []
+  }
+]

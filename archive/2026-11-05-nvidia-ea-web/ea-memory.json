@@ -1,0 +1,119 @@
+[
+  {
+    "code": "N1.1",
+    "title": "Who people are",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "In the web chat, say \"Sharon Zhang is my manager.\"",
+      "Later, ask \"Who is my manager?\""
+    ],
+    "expected": "It saves the relationship and answers \"Sharon Zhang\".",
+    "notes": [
+      "Deck: What you can tell your assistant."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N1.2",
+    "title": "Remembers facts and answers about them",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "In the web chat, tell it a few facts, e.g. \"My office is in San Francisco\" and \"My brother's name is <name>.\"",
+      "Later, in a new chat, ask about them (\"Where's my office?\", \"What's my brother's name?\")."
+    ],
+    "expected": "It saves each fact and answers correctly later without being told again.",
+    "notes": [
+      "Deck checklist #5.",
+      "Related: Nvidia EA-03 (memory)."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N1.3",
+    "title": "Corrections replace old information",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Say \"My favorite color is blue.\"",
+      "Then say \"No, my favorite color is yellow.\"",
+      "Ask \"What's my favorite color?\""
+    ],
+    "expected": "It answers yellow. The old value is replaced, not kept alongside the new one.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N1.4",
+    "title": "Check what it knows",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"What do you know about me?\""
+    ],
+    "expected": "It accurately lists what you've told it about yourself (manager, office and so on), with nothing made up. Family and contacts, like your brother, are saved as separate people, so they don't need to appear here. Ask about them by name to check them.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N1.5",
+    "title": "Knows your contacts",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "In the web chat, ask \"Do you know who is in my contacts?\"",
+      "Ask \"Do you know <name> is in my contacts?\" about someone who is."
+    ],
+    "expected": "It can see your Microsoft contacts and confirms the person is there, with their details.",
+    "notes": [
+      "Related: Nvidia EA-05 (agent knows my contacts, web)."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N1.6",
+    "title": "Uses contacts to find people",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask it to book a meeting with a contact, and to email a contact, using only their first name.",
+      "Try a first name that matches two contacts."
+    ],
+    "expected": "It picks the right person and email address from your contacts. When two match, it asks which one you mean instead of guessing.",
+    "notes": [
+      "Related: Nvidia ONB-09 (invite one of your contacts)."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N1.7",
+    "title": "Answers from uploaded information",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Upload a document or add a URL with something it couldn't otherwise know.",
+      "Watch the progress while it's processed. Try a file or URL that should fail.",
+      "Ask a question only that content answers."
+    ],
+    "expected": "Uploads show progress and failures show a clear error. It answers the question from the uploaded content.",
+    "notes": [
+      "Related: Nvidia ONB-10 (upload information)."
+    ],
+    "attachments": []
+  }
+]

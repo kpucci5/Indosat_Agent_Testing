@@ -1,0 +1,78 @@
+[
+  {
+    "code": "N4.1",
+    "title": "Find recent files",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"What files have I worked on this week?\" or \"Find my files about <topic>.\""
+    ],
+    "expected": "It lists the right files from your OneDrive with names you recognize.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N4.2",
+    "title": "Find and summarize a document",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"Find the <file> and summarize it.\""
+    ],
+    "expected": "It finds the right file in OneDrive and gives an accurate summary of its key points.",
+    "notes": [
+      "Deck checklist #4."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N4.3",
+    "title": "Answer a question from a file",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask a specific question about a file's contents, e.g. \"What's the launch date in the Q4 roadmap deck?\""
+    ],
+    "expected": "It answers from the file correctly and says which file it used.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N4.4",
+    "title": "Share a file",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After N4.2, say \"Share it with <name>.\"",
+      "Reply \"confirm\"."
+    ],
+    "expected": "It shows what will be shared and with whom, and shares only after \"confirm\". The person can open the file.",
+    "notes": [
+      "Deck checklist #4."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N4.5",
+    "title": "Email a file",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"Email <name> the Q4 roadmap deck.\"",
+      "Reply \"confirm\"."
+    ],
+    "expected": "It finds the file in OneDrive, shows the draft with the file or link, and sends only after \"confirm\". The person can open it.",
+    "notes": [],
+    "attachments": []
+  }
+]

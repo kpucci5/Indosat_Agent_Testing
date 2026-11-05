@@ -1,0 +1,6 @@
+{
+  "name": "indosat-micro-receptionist-test-tracker",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}

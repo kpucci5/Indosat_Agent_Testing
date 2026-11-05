@@ -1,0 +1,32 @@
+{
+  "suite": {
+    "tabTitle": "Indosat Micro Receptionist Test Tracker",
+    "eyebrow": "Personal AI · Indosat Micro Receptionist",
+    "title": "Indosat Micro Receptionist Testing (web)",
+    "lede": "Onboard as a business owner at tinyurl.com/indosat-smb, manage your catalog, then open the chat as a Visitor to order as a customer. Follow the test cases and record what you find with the conversation ID. When finished, submit your results using the button at the bottom of the page.",
+    "summaryTitle": "Indosat Micro Receptionist Testing (web)",
+    "levels": [
+      "MUST",
+      "SHOULD",
+      "Checklist"
+    ]
+  },
+  "areas": [
+    {
+      "name": "Owner onboarding",
+      "file": "mr-onboarding.json"
+    },
+    {
+      "name": "Catalog management",
+      "file": "mr-catalog.json"
+    },
+    {
+      "name": "Customer ordering",
+      "file": "mr-ordering.json"
+    },
+    {
+      "name": "Customer follow-up",
+      "file": "mr-followup.json"
+    }
+  ]
+}

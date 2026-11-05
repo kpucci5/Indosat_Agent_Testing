@@ -1,0 +1,62 @@
+[
+  {
+    "code": "N3.1",
+    "title": "Read recent email",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"What are my latest emails?\" and \"Do I have anything unread from <name>?\""
+    ],
+    "expected": "It lists the right emails from your Outlook inbox with sender, subject and a short summary.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N3.2",
+    "title": "Find and summarize an email",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Ask \"Find the email from <name> about <topic> and summarize it.\""
+    ],
+    "expected": "It finds the right email and the summary matches what it says.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "N3.3",
+    "title": "Send an email",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "In the web chat, say \"Email <name> that the pilot starts Nov 10.\"",
+      "Reply \"confirm\"."
+    ],
+    "expected": "It shows the draft first and sends only after \"confirm\". The email arrives from your account with the right content.",
+    "notes": [
+      "Deck checklist #3."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "N3.4",
+    "title": "Reply to an email",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After N3.2, say \"Reply and say I'll get back to them Friday.\"",
+      "Reply \"confirm\"."
+    ],
+    "expected": "It drafts a reply in the same thread, shows it first and sends only after \"confirm\".",
+    "notes": [],
+    "attachments": []
+  }
+]

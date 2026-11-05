@@ -1,0 +1,162 @@
+/* Additions for the deployed version: Indosat Ooredoo Hutchison skin on top of the base layout in styles.css.
+   Colours are the exact fills from the official IOH logo (ioh.co.id, via Wikimedia Commons):
+   yellow #FFCB05, red #ED1C24, magenta #EC008C, purple #C6168D, teal #32BCAD, wordmark grey #4D4D4F.
+   Yellow is too light to read as text, so text accents use the logo's purple and status colours
+   use darker shades where white text sits on them. */
+:root {
+  --sans: "Plus Jakarta Sans", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --accent: #ffcb05;          /* Indosat yellow: primary buttons, rules, progress */
+  --accent-hi: #ffd633;       /* hover */
+  --accent-ink: #c6168d;      /* logo purple: links, eyebrow, focus (5.6:1 on white) */
+  --accent-soft: #fff6d1;
+  --on-accent: #1a1a1a;       /* dark text on yellow / teal */
+  --wordmark: #4d4d4f;        /* logo wordmark grey */
+  --bg: #f7f7f5;              /* page */
+  --paper: #ffffff;           /* cards, inputs, dialogs */
+  --panel: #f0f0ee;
+  --hover: #fafaf8;
+  --ink: #1a1a1a;
+  --muted: #5f6064;
+  --hair: #e4e4e1;
+  --pass: #32bcad; --pass-bg: #e1f5f2; --pass-ink: #0f7a6e;   /* logo teal */
+  --fail: #d3141c; --fail-bg: #fde8e8;                        /* logo red, darkened for white text */
+  --blocked: #6b6c70; --blocked-bg: #ececed;
+  --on-solid: #ffffff;
+  --radius: 14px; --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(20,20,20,.04), 0 2px 8px rgba(20,20,20,.05);
+  --shadow-lg: 0 24px 48px -12px rgba(0,0,0,.25);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --accent-ink: #f25db4; --accent-soft: #2e2606; --wordmark: #f2f2f2; --bg: #0e0e0f; --paper: #161618; --panel: #222224; --hover: #1b1b1d;
+  --ink: #f2f2f2; --muted: #a3a3a8; --hair: #2c2c2f;
+  --pass: #32bcad; --pass-bg: #0f2b28; --pass-ink: #5ed6c8; --fail: #ff6b6b; --fail-bg: #3a1517; --blocked: #b9b9bd; --blocked-bg: #262628;
+  --on-solid: #111111; --shadow: 0 0 0 1px rgba(255,255,255,.02); --shadow-lg: 0 24px 48px -12px rgba(0,0,0,.8) } }
+:root[data-theme="dark"] {
+  --accent-ink: #f25db4; --accent-soft: #2e2606; --wordmark: #f2f2f2; --bg: #0e0e0f; --paper: #161618; --panel: #222224; --hover: #1b1b1d;
+  --ink: #f2f2f2; --muted: #a3a3a8; --hair: #2c2c2f;
+  --pass: #32bcad; --pass-bg: #0f2b28; --pass-ink: #5ed6c8; --fail: #ff6b6b; --fail-bg: #3a1517; --blocked: #b9b9bd; --blocked-bg: #262628;
+  --on-solid: #111111; --shadow: 0 0 0 1px rgba(255,255,255,.02); --shadow-lg: 0 24px 48px -12px rgba(0,0,0,.8) }
+
+body { background: var(--bg); -webkit-font-smoothing: antialiased }
+:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px }
+a { color: var(--accent-ink) }
+.wrap { gap: 24px; padding-block: 40px 96px }
+
+/* Brand bar: sticky, paper-coloured so the grey wordmark reads, Indosat-yellow rule underneath */
+.brandbar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 90%, transparent); color: var(--ink);
+  backdrop-filter: saturate(160%) blur(12px); -webkit-backdrop-filter: saturate(160%) blur(12px);
+  box-shadow: inset 0 -3px 0 var(--accent) }
+.brandbar-in { max-width: 1240px; margin: 0 auto; min-height: 64px; display: flex; align-items: center; gap: 16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.brand { display: inline-flex; color: var(--wordmark) }
+.brand-logo { height: 38px; width: auto; display: block }
+.brand-app { padding-left: 16px; border-left: 1px solid var(--hair); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+
+/* Header */
+header.top { border-bottom: 0; padding-bottom: 4px }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--accent-ink); font-weight: 600; letter-spacing: .1em }
+.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft) }
+h1 { font-size: clamp(30px, 4.4vw, 44px); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; margin: 12px 0 10px }
+h2 { letter-spacing: -.02em }
+.lede { font-size: 16px; line-height: 1.55 }
+.who { background: var(--paper); border: 1px solid var(--hair); border-radius: 999px; padding: 8px 14px; box-shadow: var(--shadow) }
+.who a { color: inherit }
+.signin { max-width: 720px }
+
+/* Buttons */
+.btn { border-radius: var(--radius-sm); border-color: var(--hair); background: var(--paper); font-weight: 600;
+  transition: border-color .15s, background .15s, transform .15s, box-shadow .15s }
+.btn:hover:not(:disabled) { border-color: var(--muted); background: var(--hover) }
+.btn:active:not(:disabled) { transform: translateY(1px) }
+.btn.solid { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 4px 12px -4px color-mix(in srgb, var(--accent) 60%, transparent) }
+.btn.solid:hover:not(:disabled) { background: var(--accent-hi); border-color: var(--accent-hi) }
+.btn.danger { border-color: color-mix(in srgb, var(--fail) 45%, transparent); color: var(--fail) }
+.btn.danger:hover:not(:disabled) { background: var(--fail-bg); border-color: var(--fail) }
+
+/* Summary */
+.summary { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px }
+.summary .tile { flex: 1 1 160px; max-width: 236px }
+@media (max-width: 600px) { .summary .tile { flex: 0 0 calc(50% - 7px); max-width: none } }
+.tile { background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; gap: 6px }
+.tile .k { font-size: 11px; font-weight: 600; letter-spacing: .1em }
+.tile .v { font-size: 34px; font-weight: 700; letter-spacing: -.03em; line-height: 1.05 }
+.tile:nth-child(2) .v { color: var(--pass-ink) }
+.tile:nth-child(3) .v { color: var(--fail) }
+.tile:nth-child(4) .v { color: var(--blocked) }
+.bar { height: 8px; border-radius: 999px; background: var(--panel); gap: 2px }
+.bar > span { border-radius: 999px; transition: width .4s ease }
+.legend i { width: 8px; height: 8px; border-radius: 50%; vertical-align: 1px }
+
+/* Filters */
+.filters { background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px }
+.field label, .lbl { font-size: 11px; font-weight: 600; letter-spacing: .1em }
+.field input, .field select, .field textarea { border: 1px solid var(--hair); border-radius: var(--radius-sm); background: var(--paper);
+  transition: border-color .15s, box-shadow .15s }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: color-mix(in srgb, var(--muted) 50%, var(--hair)) }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent-ink); outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent) }
+
+/* Case groups: each area is a card, rows highlight on hover */
+#list > div { gap: 24px !important }
+.group { background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden }
+.group h2 { position: relative; margin: 0; padding: 18px 20px 16px 34px; font-size: 18px; font-weight: 700; border-bottom: 1px solid var(--hair) }
+.group h2::before { content: ""; position: absolute; left: 20px; top: 21px; bottom: 19px; width: 4px; border-radius: 2px; background: var(--accent) }
+.group h2 small { font-size: 12px; font-weight: 500 }
+.case { padding: 0 20px; border-bottom: 1px solid var(--hair); transition: background .12s }
+.case:last-child { border-bottom: 0 }
+.case:hover { background: var(--hover) }
+.case.open { background: var(--hover); box-shadow: inset 3px 0 0 var(--accent) }
+.toggle:hover .title { color: var(--accent-ink) }
+.title { font-weight: 600 }
+.code { font-size: 11px }
+.chip { border-radius: 999px; border: 0; background: var(--panel); padding: 3px 10px; font-weight: 600; font-size: 11px; letter-spacing: .02em }
+.chip.must { background: var(--ink); color: var(--paper) }
+.chip.soft { background: transparent; box-shadow: inset 0 0 0 1px var(--hair) }
+.box { background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius-sm) }
+.dash { border-radius: var(--radius-sm); border-color: var(--hair); background: var(--paper) }
+.detail { padding: 8px 0 24px 28px }
+
+/* Status pills */
+.pill { border-radius: 999px; font-size: 11px; letter-spacing: .08em; font-weight: 600; padding: 5px 12px }
+.pill.pass { color: var(--pass-ink) }
+.pill.untested { border: 0; background: var(--panel); color: var(--muted) }
+
+/* Pass / Fail / Blocked as segmented controls */
+.quick, .seg { background: var(--panel); border-radius: var(--radius-sm); padding: 3px; gap: 3px }
+.quick button, .seg button { border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-weight: 600;
+  transition: background .15s, color .15s, box-shadow .15s }
+.quick button { min-height: 34px; padding: 0 12px }
+.seg button { min-height: 40px }
+.quick button:hover, .seg button:hover { background: var(--paper); color: var(--ink) }
+.quick button[aria-pressed="true"], .seg button[aria-pressed="true"] { box-shadow: 0 1px 3px rgba(0,0,0,.15) }
+.quick button[aria-pressed="true"].pass, .seg button[aria-pressed="true"].pass { background: var(--pass); color: var(--on-accent) }
+.quick button[aria-pressed="true"].fail, .seg button[aria-pressed="true"].fail { background: var(--fail); color: var(--on-solid) }
+.quick button[aria-pressed="true"].blocked, .seg button[aria-pressed="true"].blocked { background: var(--blocked); color: var(--on-solid) }
+
+/* Submit section */
+.submit { background: var(--paper); border: 1px solid var(--hair); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px;
+  border-top: 3px solid var(--accent) }
+.submit h2 { font-size: 20px; font-weight: 700 }
+
+/* Notices, empty states, dialogs, uploads */
+.notice { border-radius: var(--radius-sm); border: 1px solid color-mix(in srgb, var(--fail) 25%, transparent) }
+.empty { background: var(--paper); border-radius: var(--radius); border-color: var(--hair) }
+dialog { border: 1px solid var(--hair); border-radius: 18px; box-shadow: var(--shadow-lg) }
+dialog::backdrop { background: rgba(0,0,0,.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px) }
+dialog form { padding: 28px }
+dialog h3 { font-size: 22px; font-weight: 700; letter-spacing: -.02em }
+.drop { border-radius: var(--radius-sm); border-color: var(--hair); border-width: 1.5px; background: var(--paper); transition: border-color .15s, background .15s }
+.drop.over { border-color: var(--accent-ink); background: var(--accent-soft) }
+.thumb { border-radius: 8px }
+details.export textarea { border-radius: var(--radius-sm) }
+
+@media (max-width: 520px) {
+  .brand-logo { height: 32px }
+  .brand-app { font-size: 11px; padding-left: 12px }
+  .case { padding: 0 14px }
+  .group h2 { padding: 16px 14px 14px 28px }
+  .group h2::before { left: 14px }
+  .detail { padding-left: 0 }
+  .submit { padding: 18px 16px }
+}

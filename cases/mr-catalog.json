@@ -1,0 +1,85 @@
+[
+  {
+    "code": "R2.1",
+    "title": "Add new products",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "As the owner, say \"We are now selling matcha mochi and chocolate mochi, both at $3 each.\""
+    ],
+    "expected": "Both products are added as separate items at $3 each and shown as available.",
+    "notes": [
+      "Journey 2, step 1.",
+      "Testing checklist #3."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R2.2",
+    "title": "Change a product's price",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Say \"Jasmine milk tea is now $7 each.\" Use a product from your own catalog if it doesn't have jasmine milk tea."
+    ],
+    "expected": "The existing product's price changes to $7. No duplicate product is created and the old price isn't kept.",
+    "notes": [
+      "Journey 2, step 2.",
+      "Testing checklist #3."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R2.3",
+    "title": "Retire a product",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Say \"We are no longer selling strawberry mochi.\" Use a product from your own catalog if needed."
+    ],
+    "expected": "The product is marked as no longer available (or removed) and the other products are unchanged.",
+    "notes": [
+      "Journey 2, step 3.",
+      "Testing checklist #3."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R2.4",
+    "title": "Ambiguous or unknown product",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Say \"Mochi is now $4\" when more than one mochi is in the catalog.",
+      "Say \"Retire the taro latte\" for a product that isn't in the catalog."
+    ],
+    "expected": "It asks which mochi you mean instead of guessing, and says the taro latte isn't in the catalog instead of creating or changing something.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R2.5",
+    "title": "Catalog changes reach customers",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After R2.1–R2.3, open the chat and choose Visitor.",
+      "Ask about the new mochi, the jasmine milk tea price and the strawberry mochi."
+    ],
+    "expected": "The customer side offers the new mochi at $3, quotes jasmine milk tea at $7, and says strawberry mochi isn't available.",
+    "notes": [
+      "Testing checklist #3."
+    ],
+    "attachments": []
+  }
+]

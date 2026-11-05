@@ -1,0 +1,113 @@
+[
+  {
+    "code": "R1.1",
+    "title": "Open the onboarding link",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Open tinyurl.com/indosat-smb, or scan the QR code from the session."
+    ],
+    "expected": "Owner onboarding starts in the web chat and asks the first business-profile question.",
+    "notes": [
+      "Journey 1, step 1 (Invite)."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R1.2",
+    "title": "Set up the business profile",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Answer each onboarding question: business name, opening hours and services."
+    ],
+    "expected": "It asks each question clearly, accepts your answers, and moves to the next step without asking again for something you already gave.",
+    "notes": [
+      "Journey 1, step 2 (Business profile).",
+      "Testing checklist #1."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R1.3",
+    "title": "Correct an answer during onboarding",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "During R1.2, give your hours, then correct them, e.g. \"Sorry, we close at 9pm, not 8pm.\""
+    ],
+    "expected": "It uses the corrected answer. The old value isn't kept alongside the new one.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R1.4",
+    "title": "Add products from a menu photo",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "At the product catalog step, upload a picture of a menu."
+    ],
+    "expected": "It reads the products and prices from the photo correctly, shows them back to you, and doesn't add anything that isn't on the menu.",
+    "notes": [
+      "Journey 1, step 3 (Product catalog)."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R1.5",
+    "title": "Add products by typing them in",
+    "pr": null,
+    "level": "SHOULD",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Onboard again (or add to your catalog) by typing product details, e.g. \"Jasmine milk tea $6, strawberry mochi $3.\""
+    ],
+    "expected": "Each product is saved with the right name and price.",
+    "notes": [],
+    "attachments": []
+  },
+  {
+    "code": "R1.6",
+    "title": "Agent created and phone line attached",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "Finish onboarding."
+    ],
+    "expected": "A receptionist agent is created from your business profile, and it shows the phone number attached to it.",
+    "notes": [
+      "Journey 1, step 4.",
+      "Testing checklist #1.",
+      "Calling the number is for the voice phase, not today."
+    ],
+    "attachments": []
+  },
+  {
+    "code": "R1.7",
+    "title": "Business and products show correctly in memory",
+    "pr": null,
+    "level": "MUST",
+    "owner": "",
+    "dev": "",
+    "steps": [
+      "After onboarding, check the business and products in memory (or ask the owner chat \"What are our hours?\" and \"What's on our menu?\")."
+    ],
+    "expected": "The business name, hours and services match your answers. Each product is saved as its own item with the right price and shown as available.",
+    "notes": [
+      "Testing checklist #2."
+    ],
+    "attachments": []
+  }
+]
