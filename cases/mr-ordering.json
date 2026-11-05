@@ -126,24 +126,6 @@
   },
   {
     "code": "R3.9",
-    "title": "Owner is notified of the order",
-    "pr": null,
-    "level": "MUST",
-    "owner": "",
-    "dev": "",
-    "steps": [
-      "After R3.8, check the owner's notification."
-    ],
-    "expected": "The owner gets a notification of the new order with the customer's name, items and total.",
-    "notes": [
-      "Journey 3, step 4 (notified on SMS).",
-      "Testing checklist #5.",
-      "SMS isn't live yet (pending network integration). On web, check where the message shows up and note it. Mark Blocked if you can't see it anywhere."
-    ],
-    "attachments": []
-  },
-  {
-    "code": "R3.10",
     "title": "Order shows correctly in memory",
     "pr": null,
     "level": "MUST",

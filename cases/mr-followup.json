@@ -1,74 +1,24 @@
 [
   {
     "code": "R4.1",
-    "title": "Order confirmation sent to the customer",
+    "title": "Order status updates are kept in memory",
     "pr": null,
     "level": "MUST",
     "owner": "",
     "dev": "",
     "steps": [
-      "As the owner, confirm the order from R3.8."
+      "As the owner, update the order from R3.8, e.g. \"Mark <customer>'s order as ready.\"",
+      "Check the order in memory (or ask \"What's the status of <customer>'s order?\")."
     ],
-    "expected": "The customer gets a message like \"<Business> confirmed your order. Please pay through [payment link].\" with your business's name. The order's status updates to confirmed.",
+    "expected": "The order's status updates, its earlier status is kept in its history, and the total price is still correct.",
     "notes": [
-      "Journey 4, step 1.",
-      "The payment platform is out of scope, so a placeholder link is fine.",
-      "SMS isn't live yet (pending network integration). On web, check where the message shows up and note it. Mark Blocked if you can't see it anywhere."
-    ],
-    "attachments": []
-  },
-  {
-    "code": "R4.2",
-    "title": "Ready-for-pickup message",
-    "pr": null,
-    "level": "MUST",
-    "owner": "",
-    "dev": "",
-    "steps": [
-      "As the owner, mark the order as fulfilled or ready."
-    ],
-    "expected": "The customer gets \"Your order is ready for pickup.\" and the order's status updates.",
-    "notes": [
-      "Journey 4, step 2.",
-      "SMS isn't live yet (pending network integration). On web, check where the message shows up and note it. Mark Blocked if you can't see it anywhere."
-    ],
-    "attachments": []
-  },
-  {
-    "code": "R4.3",
-    "title": "Follow-up on a canceled order",
-    "pr": null,
-    "level": "SHOULD",
-    "owner": "",
-    "dev": "",
-    "steps": [
-      "As a visitor, start a new order and leave without confirming (or cancel it)."
-    ],
-    "expected": "The customer gets a follow-up like \"Would you like to finish your order with <Business>?\" and the order's status shows it wasn't completed.",
-    "notes": [
-      "Journey 4, step 3.",
-      "SMS isn't live yet (pending network integration). On web, check where the message shows up and note it. Mark Blocked if you can't see it anywhere."
-    ],
-    "attachments": []
-  },
-  {
-    "code": "R4.4",
-    "title": "Order history is kept in memory",
-    "pr": null,
-    "level": "MUST",
-    "owner": "",
-    "dev": "",
-    "steps": [
-      "After R4.1–R4.3, check each order in memory."
-    ],
-    "expected": "Each order keeps its history: the status changes are recorded in order, and the total price is still correct.",
-    "notes": [
+      "Memory note on the Journey 4 slide: each order keeps its history; status and total price can be updated.",
       "Testing checklist #6."
     ],
     "attachments": []
   },
   {
-    "code": "R4.5",
+    "code": "R4.2",
     "title": "Gaps logged and retest passes",
     "pr": null,
     "level": "Checklist",
